@@ -1,0 +1,36 @@
+
+
+# SERVER 변수 설정
+@server = http://localhost:3000
+
+
+### GET 요청
+GET {{server}}/person
+
+### POST로 문서 추가.
+POST {{server}}/person
+Content-Type: application/json
+
+{
+    "name": "Hoshino Koujou",
+    "age": 50,
+    "crew": "Purple Shadow"
+}
+
+### 생성한 문서 확인
+
+GET {{server}}/person/Hoshino%20Koujou
+
+
+### PUT 요청으로 문서 수정.
+
+PUT {{server}}/person/Hoshino%20Koujou
+Content-Type: application/json
+
+{
+    "age": 48
+}
+
+
+### 문서 삭제
+DELETE {{server}}/person/Hoshino%20Koujou
