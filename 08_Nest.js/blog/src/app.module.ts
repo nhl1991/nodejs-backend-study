@@ -4,11 +4,13 @@ import { BlogService } from './blog.service';
 import { BlogMongoRepository } from './blog.repository';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Blog, BlogSchema } from './blog.schema';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({ isGlobal: true}),
     MongooseModule.forRoot(
-      "mongodb+srv://laslark1991:Wlsrud!!20@test-my-app.z6ysuct.mongodb.net/?retryWrites=true&w=majority&appName=test-my-app/blog"
+      process.env.MONGO_URL!
     ),
     MongooseModule.forFeature([{ name: Blog.name, schema: BlogSchema}])
   ],
