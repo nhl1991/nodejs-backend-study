@@ -1,12 +1,12 @@
 import { NestFactory } from '@nestjs/core';
-// import { AppModule } from './app.module';
-import { HelloModule } from './hello.module';
+import { AppModule } from './app.module';
+// import { HelloModule } from './hello/hello.module';
 
 
 // NestJS 시작 
 async function bootstrap() {
   // NestFactory로 NestApplication 객체 생성
-  const app = await NestFactory.create(HelloModule);
+  const app = await NestFactory.create(AppModule);
   /**
    * NestFactory는 NestFactoryStatic 클래스이며 create 함수로 NestApplication 객체를 생성.
    * create<T extends INestApplication = INestApplication>(module: IEntryNestModule, options?: NestApplicationOptions): Promise<T>;

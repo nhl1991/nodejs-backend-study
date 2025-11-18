@@ -8,7 +8,7 @@ import { Blog, BlogSchema } from './blog.schema';
 @Module({
   imports: [
     MongooseModule.forRoot(
-      MONGO_URL
+      "mongodb+srv://laslark1991:Wlsrud!!20@test-my-app.z6ysuct.mongodb.net/?retryWrites=true&w=majority&appName=test-my-app/blog"
     ),
     MongooseModule.forFeature([{ name: Blog.name, schema: BlogSchema}])
   ],
