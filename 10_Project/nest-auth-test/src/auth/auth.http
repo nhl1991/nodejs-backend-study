@@ -1,0 +1,72 @@
+
+@server=http://localhost:3000/auth
+
+### User 1 Already exists.
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email": "laslark1991@gmail.com",
+    "username": "laslark1991",
+    "password": "shashasha"
+
+}
+### User 2
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email": "nhl1991@naver.com",
+    "username": "nhl1991",
+    "password": "DragosteaDinTei"
+
+}
+
+
+### User 2 Login
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "nhl1991@naver.com",
+    "password": "DragosteaDinTei"
+}
+
+
+### User 2 AuthGuard
+
+POST http://localhost:3000/auth/login2
+Content-Type: application/json
+
+{
+    "email": "nhl1991@naver.com",
+    "password": "DragosteaDinTei"
+}
+
+### Guard Test
+GET {{server}}/test-guard
+
+
+
+### Login Test 3 with session
+POST {{server}}/login3
+Content-Type: application/json
+
+{
+    "email": "nhl1991@naver.com",
+    "password": "DragosteaDinTei"
+}
+
+### Login 3 with wrong password
+POST {{server}}/login3
+Content-Type: application/json
+
+{
+    "email": "nhl1991@naver.com",
+    "password": "wrong_password"
+}
+
+
+### Authentication Test
+GET {{server}}/test-guard2

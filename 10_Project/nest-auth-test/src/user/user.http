@@ -1,0 +1,40 @@
+@server = http://localhost:3000/user
+@email = laslark1991@gmail.com
+
+
+### Create
+POST http://localhost:3000/user/create
+Content-Type: application/json
+
+{
+    "username": "rathrak",
+    "password": "test1234",
+    "email": "rathrak@gmail.com"
+}
+### Create short password
+POST http://localhost:3000/user/create
+Content-Type: application/json
+
+{
+    "username": "laslark1991",
+    "password": "tes",
+    "email": "laslark1991@gmail.com"
+}
+
+
+### getUser
+GET {{server}}/getUser/{{email}}
+
+### updateUser
+PUT {{server}}/update/{{email}}
+Content-Type: application/json
+
+{
+    "email": "laslark1991@gmail.com",
+    "username": "Drakedog",
+    "password": "EE222222"
+}
+
+
+### deleteUser
+DELETE {{server}}/delete/{{email}}
