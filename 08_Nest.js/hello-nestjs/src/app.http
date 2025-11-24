@@ -1,0 +1,8 @@
+@server = http://localhost:3000
+
+
+### GET /cats?age=2&breed=Persian
+GET {{server}}/hello?age=2&breed=Persian
+
+### GET /http://localhost:3000/passport-example/2025/winter?params
+GET {{server}}/passport-example/2025/winter?offset=5&limit=10

@@ -1,0 +1,34 @@
+@server = http://localhost:3000
+
+### File Upload
+POST {{server}}/file-upload
+Content-Type: multipart/form-data; boundary=test-file-upload
+
+--test-file-upload
+Content-Disposition: form-data; name="file"; filename="test.txt"
+
+こちらにテキストファイルの内容を入れてください。
+--test-file-upload--
+
+
+### Local File Upload
+POST {{server}}/file-upload
+Content-Type: multipart/form-data; boundary=test-file-upload
+
+--test-file-upload
+Content-Disposition: form-data; name="file"; filename="test.txt"
+
+< test.txt
+--test-file-upload--
+
+
+
+### Local Image Upload
+POST {{server}}/file-upload
+Content-Type: multipart/form-data; boundary=image-file-upload
+
+--image-file-upload
+Content-Disposition: form-data; name="file"; filename="IMG_6267.JPEG"
+
+< IMG_6267.JPEG
+--image-file-upload--
